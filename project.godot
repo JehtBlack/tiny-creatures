@@ -24,6 +24,10 @@ window/size/viewport_height=720
 
 project/assembly_name="Tiny Creatures"
 
+[global_group]
+
+damageable="All Items/units which can take damage"
+
 [input]
 
 Left={

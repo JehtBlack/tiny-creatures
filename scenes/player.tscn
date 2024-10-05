@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://2k4goowntk4a"]
+[gd_scene load_steps=5 format=3 uid="uid://2k4goowntk4a"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_y1rou"]
+[ext_resource type="PackedScene" uid="uid://dkvmvrkj7it3x" path="res://scenes/bullet.tscn" id="2_nse4k"]
 [ext_resource type="Texture2D" uid="uid://cup464pvt0n6h" path="res://assets/sprites/player-proto.png" id="2_qfk1d"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ldg6g"]
@@ -9,6 +10,7 @@ radius = 32.0156
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 30
 script = ExtResource("1_y1rou")
+Bullet = ExtResource("2_nse4k")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(13, 1)
@@ -17,3 +19,6 @@ texture = ExtResource("2_qfk1d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ldg6g")
+
+[node name="Muzzle" type="Marker2D" parent="."]
+position = Vector2(17, -42)
