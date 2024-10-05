@@ -2,6 +2,7 @@ extends Node
 
 signal max_health_changed(new_max_health: int)
 signal health_changed(new_health: int)
+signal health_depleted
 
 @export var max_health: int = 30:
     set(value):
@@ -12,6 +13,8 @@ var health: int:
     set(value):
         health = min(max(value, 0), max_health)
         health_changed.emit(health)
+        if health == 0:
+            health_depleted.emit()
 
 var left_guns: Array = []
 var right_guns: Array = []

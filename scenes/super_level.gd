@@ -3,15 +3,7 @@ class_name SuperLevel
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	
-	if Input.is_key_pressed(KEY_ESCAPE):
-		var end_screen = preload("res://scenes/end_screen.tscn").instantiate()
-		add_child(end_screen)
+	PlayerData.health_depleted.connect(_on_player_health_depleted)
 
 func spawn_projectile(projectile: PackedScene, spawn_position: Vector2, direction: Vector2, speed: float) -> void:
 	var projectile_instance = projectile.instantiate() as Projectile
@@ -22,3 +14,7 @@ func spawn_projectile(projectile: PackedScene, spawn_position: Vector2, directio
 
 func _on_player_spawn_projectile(projectile: PackedScene, spawn_position: Vector2, direction: Vector2, speed: float) -> void:
 	spawn_projectile(projectile, spawn_position, direction, speed)
+
+func _on_player_health_depleted() -> void:
+	var end_screen = preload("res://scenes/end_screen.tscn").instantiate()
+	add_child(end_screen)

@@ -6,12 +6,13 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mfaow"]
 radius = 3.0
-height = 50.0
+height = 26.0
 
 [node name="Bullet" instance=ExtResource("1_cpgsb")]
 script = ExtResource("1_oxbwp")
 
 [node name="Sprite2D" parent="." index="0"]
+position = Vector2(-11, 0)
 texture = ExtResource("2_6uu7h")
 
 [node name="CollisionShape2D" parent="." index="1"]

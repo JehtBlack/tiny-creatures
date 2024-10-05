@@ -3,11 +3,11 @@ extends CharacterBody2D
 signal spawn_projectile(projectile: PackedScene, spawn_position: Vector2, direction: Vector2, speed: float)
 
 @export var speed = 400
-var health = 30
 
 var look = true
 
 func _ready():
+	PlayerData.health_depleted.connect(_on_health_depleted)
 	# iterate through guns in PlayerData and instantiate them
 	pass
 
@@ -30,6 +30,9 @@ func _on_control_mouse_entered():
 func _on_control_mouse_exited():
 	look = true
 
+func _on_health_depleted():
+	print("Player died")
+	queue_free()
 
 func shoot():
 	if Input.is_action_pressed("ShootLeft"):
@@ -39,6 +42,4 @@ func shoot():
 
 
 func hit(damage):
-	health = health - damage
-	if health <= 0:
-		pass # fail state of zero health
+	PlayerData.health -= damage
