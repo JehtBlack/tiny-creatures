@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://2k4goowntk4a"]
+[gd_scene load_steps=5 format=3 uid="uid://2k4goowntk4a"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_y1rou"]
-[ext_resource type="PackedScene" uid="uid://ciubqusvuudhf" path="res://scenes/bullet.tscn" id="2_nse4k"]
 [ext_resource type="Texture2D" uid="uid://cup464pvt0n6h" path="res://assets/sprites/player-proto.png" id="2_qfk1d"]
 [ext_resource type="PackedScene" uid="uid://e5ts482qt8xw" path="res://scenes/gun.tscn" id="3_bdogp"]
 
@@ -25,22 +24,18 @@ position = Vector2(0, -34)
 
 [node name="GunLeft" parent="LeftGuns" instance=ExtResource("3_bdogp")]
 position = Vector2(31, -1)
-bullet = ExtResource("2_nse4k")
 fire_rate = 5.0
 
 [node name="GunLeft2" parent="LeftGuns" instance=ExtResource("3_bdogp")]
 position = Vector2(46, 16)
-bullet = ExtResource("2_nse4k")
 fire_rate = 5.0
 
 [node name="GunLeft3" parent="LeftGuns" instance=ExtResource("3_bdogp")]
 position = Vector2(42, -16)
-bullet = ExtResource("2_nse4k")
 fire_rate = 5.0
 
 [node name="GunLeft4" parent="LeftGuns" instance=ExtResource("3_bdogp")]
 position = Vector2(10, -22)
-bullet = ExtResource("2_nse4k")
 fire_rate = 5.0
 
 [node name="RightGuns" type="Node2D" parent="."]
@@ -48,10 +43,8 @@ position = Vector2(0, 35)
 
 [node name="GunRight" parent="RightGuns" instance=ExtResource("3_bdogp")]
 position = Vector2(32, 2)
-bullet = ExtResource("2_nse4k")
 fire_rate = 50.0
 
 [node name="GunRight2" parent="RightGuns" instance=ExtResource("3_bdogp")]
 position = Vector2(1, 19)
-bullet = ExtResource("2_nse4k")
 fire_rate = 50.0

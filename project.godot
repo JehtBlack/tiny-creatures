@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+SceneSwitcher="*res://scenes/persistent/scene_switcher.gd"
 PlayerData="*res://scenes/persistent/player_data.gd"
 
 [display]

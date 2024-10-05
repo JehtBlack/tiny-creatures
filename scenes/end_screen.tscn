@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://bduan6cxc2f8f"]
 
-[ext_resource type="Script" path="res://end_screen.gd" id="1_ltgdy"]
+[ext_resource type="Script" path="res://scenes/end_screen.gd" id="1_4rbvu"]
 
 [node name="EndScreen" type="CanvasLayer"]
-script = ExtResource("1_ltgdy")
+script = ExtResource("1_4rbvu")
 
 [node name="GameOver" type="VBoxContainer" parent="."]
 anchors_preset = 8
