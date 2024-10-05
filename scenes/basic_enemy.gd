@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 var run_speed = 50
+var health = 10
 var player = null
 
 func _physics_process(_delta):
@@ -19,3 +20,8 @@ func _on_detect_area_body_entered(body: Node2D) -> void:
 func _on_detect_area_body_exited(body: Node2D) -> void:
 	player = null
 	print("Must be the wind...")
+
+func hit(damage):
+	health = health - damage
+	if health <= 0:
+		queue_free()

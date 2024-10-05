@@ -3,6 +3,7 @@ class_name Projectile
 
 var speed: int = 750
 var lifespawn_seconds: float = 5.0
+@export var damage: int = 2
 
 func _ready() -> void:
 	var lifespan_timer = Timer.new()
