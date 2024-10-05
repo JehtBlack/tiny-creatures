@@ -15,13 +15,11 @@ run/main_scene="res://scenes/super_level.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
-[layer_names]
+[display]
 
-2d_physics/layer_1="Player"
-2d_physics/layer_2="Enemies"
-2d_physics/layer_3="Pickups"
-2d_physics/layer_4="Objects"
-2d_physics/layer_5="Sensors"
+window/size/viewport_width=1280
+window/size/viewport_height=720
+
 [dotnet]
 
 project/assembly_name="Tiny Creatures"
@@ -58,3 +56,11 @@ Shoot={
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":10,"pressure":0.0,"pressed":false,"script":null)
 ]
 }
+
+[layer_names]
+
+2d_physics/layer_1="Player"
+2d_physics/layer_2="Enemies"
+2d_physics/layer_3="Pickups"
+2d_physics/layer_4="Objects"
+2d_physics/layer_5="Sensors"
