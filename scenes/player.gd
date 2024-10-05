@@ -7,6 +7,10 @@ var health = 30
 
 var look = true
 
+func _ready():
+	# iterate through guns in PlayerData and instantiate them
+	pass
+
 func get_input():
 	if look == true:
 		look_at(get_global_mouse_position())
@@ -15,7 +19,6 @@ func get_input():
 	shoot()
 
 
-		
 func _physics_process(_delta):
 	get_input()
 	move_and_slide()
@@ -38,4 +41,4 @@ func shoot():
 func hit(damage):
 	health = health - damage
 	if health <= 0:
-		pass #fail state of zero health
+		pass # fail state of zero health

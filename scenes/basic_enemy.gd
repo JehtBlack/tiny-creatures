@@ -17,7 +17,7 @@ func _on_detect_area_body_entered(body: Node2D) -> void:
 	print("I heard a noise!")
 
 
-func _on_detect_area_body_exited(body: Node2D) -> void:
+func _on_detect_area_body_exited(_body: Node2D) -> void:
 	player = null
 	print("Must be the wind...")
 

@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://bpwqtcpbrjyqo"]
+[gd_scene load_steps=4 format=3 uid="uid://bpwqtcpbrjyqo"]
 
 [ext_resource type="Texture2D" uid="uid://by6l1lyk3dawe" path="res://assets/ui/health_bar_bg.png" id="1_miefp"]
+[ext_resource type="Script" path="res://scenes/hud.gd" id="1_sdrfn"]
 [ext_resource type="Texture2D" uid="uid://bteb6jo5bmjag" path="res://assets/ui/health_bar_fg.png" id="2_smgty"]
 
 [node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_sdrfn")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 12
