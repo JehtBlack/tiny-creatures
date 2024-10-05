@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://bkukcftehuhj4"]
+
+[ext_resource type="Script" path="res://scenes/glocklin.gd" id="1_17nfb"]
+[ext_resource type="Texture2D" uid="uid://qcid6f4rtnon" path="res://assets/sprites/png-clipart-round-red-illustration-red-circle-miscellaneous-shapes-thumbnail.png" id="2_57g8n"]
+[ext_resource type="PackedScene" uid="uid://e5ts482qt8xw" path="res://scenes/gun.tscn" id="2_xwy65"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4olo4"]
+radius = 198.003
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uxpil"]
+radius = 576.782
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_su70n"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+collision_layer = 4
+script = ExtResource("1_17nfb")
+gun = ExtResource("2_xwy65")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_57g8n")
+
+[node name="AreaPickup" type="Area2D" parent="."]
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaPickup"]
+shape = SubResource("CircleShape2D_4olo4")
+
+[node name="AreaNotice" type="Area2D" parent="."]
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaNotice"]
+shape = SubResource("CircleShape2D_uxpil")
+debug_color = Color(0.944725, 0.175683, 0.40366, 0.42)
+
+[node name="CollisionShape2DChar" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_su70n")
+
+[connection signal="body_entered" from="AreaPickup" to="." method="_on_area_pickup_body_entered"]
+[connection signal="body_entered" from="AreaNotice" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="AreaNotice" to="." method="_on_area_2d_body_exited"]

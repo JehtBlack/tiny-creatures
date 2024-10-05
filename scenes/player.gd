@@ -45,7 +45,8 @@ func _add_gun(gun: PackedScene):
 		_add_gun_to_container(gun, $LeftGuns if randi() % 2 == 0 else $RightGuns)
 
 func _add_gun_to_container(gun: PackedScene, container: Node2D):
-	var new_gun = gun.instantiate()
+	var new_gun = gun.instantiate() as Node2D
+	new_gun.transform = container.transform
 	container.add_child(new_gun)
 
 func shoot():
