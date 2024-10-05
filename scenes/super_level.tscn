@@ -27,4 +27,6 @@ bullet = ExtResource("4_msce6")
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position_smoothing_enabled = true
 
+[node name="BasicEnemy" parent="." instance=ExtResource("4_l1xq3")]
 [connection signal="spawn_projectile" from="Player" to="." method="_on_player_spawn_projectile"]
+

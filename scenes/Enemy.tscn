@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://oh7xjsgnql7c"]
+
+[ext_resource type="Texture2D" uid="uid://qcid6f4rtnon" path="res://assets/sprites/png-clipart-round-red-illustration-red-circle-miscellaneous-shapes-thumbnail.png" id="1_3nj61"]
+
+[node name="Sprite2D" type="Sprite2D"]
+scale = Vector2(0.247, 0.25)
+texture = ExtResource("1_3nj61")
