@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://2k4goowntk4a" path="res://scenes/player.tscn" id="2_hje26"]
 [ext_resource type="TileSet" uid="uid://b3hcgxb56uflb" path="res://scenes/cave.tres" id="2_i12ur"]
 [ext_resource type="PackedScene" uid="uid://dkvmvrkj7it3x" path="res://scenes/bullet.tscn" id="3_den2k"]
-[gd_scene load_steps=4 format=3 uid="uid://dqoxhn6h3ht8f"]
 
 [node name="SuperLevel" type="Node2D"]
 script = ExtResource("1_bg3g2")
@@ -24,4 +23,5 @@ position = Vector2(510, 300)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position_smoothing_enabled = true
+
 [node name="Bullet" parent="." instance=ExtResource("3_den2k")]
