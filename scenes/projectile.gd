@@ -15,7 +15,7 @@ func _ready() -> void:
 func _physics_process(delta):
 	position += transform.x * speed * delta
 
-func _on_Bullet_body_entered(body):
+func _on_body_entered(body: Node2D) -> void:
 	hit(body)
 
 func _on_lifespan_timer_timeout() -> void:

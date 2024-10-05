@@ -3,6 +3,8 @@
 [ext_resource type="Script" path="res://scenes/projectile.gd" id="1_m5fys"]
 
 [node name="Projectile" type="Area2D"]
+collision_layer = 32
+collision_mask = 10
 script = ExtResource("1_m5fys")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

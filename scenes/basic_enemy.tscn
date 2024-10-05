@@ -1,16 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://bn6vjxbth1m"]
+[gd_scene load_steps=5 format=3 uid="uid://nkvpadg1tdl8"]
 
 [ext_resource type="Script" path="res://scenes/basic_enemy.gd" id="1_4fv0q"]
 [ext_resource type="Texture2D" uid="uid://qcid6f4rtnon" path="res://assets/sprites/png-clipart-round-red-illustration-red-circle-miscellaneous-shapes-thumbnail.png" id="1_s4enr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d8kqw"]
+radius = 46.2709
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kfdrs"]
 radius = 228.009
 
-[node name="BasicEnemy" type="CharacterBody2D"]
+[node name="BasicEnemy" type="CharacterBody2D" groups=["damageable"]]
 collision_layer = 2
-collision_mask = 11
+collision_mask = 43
 script = ExtResource("1_4fv0q")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
