@@ -34,12 +34,30 @@ func _on_health_depleted():
 	print("Player died")
 	queue_free()
 
-func shoot():
-	if Input.is_action_pressed("ShootLeft"):
-		$GunLeft.fire(Input.is_action_just_pressed("ShootLeft"), get_global_mouse_position(), spawn_projectile)
-	if Input.is_action_pressed("ShootRight"):
-		$GunRight.fire(Input.is_action_just_pressed("ShootRight"), get_global_mouse_position(), spawn_projectile)
+func _add_gun(gun: PackedScene):
+	var left_gun_count = $LeftGuns.get_child_count()
+	var right_gun_count = $RightGuns.get_child_count()
+	if left_gun_count < right_gun_count:
+		_add_gun_to_container(gun, $LeftGuns)
+	elif left_gun_count > right_gun_count:
+		_add_gun_to_container(gun, $RightGuns)
+	else:
+		_add_gun_to_container(gun, $LeftGuns if randi() % 2 == 0 else $RightGuns)
 
+func _add_gun_to_container(gun: PackedScene, container: Node2D):
+	var new_gun = gun.instantiate()
+	container.add_child(new_gun)
+
+func shoot():
+	_shoot_guns("ShootLeft", $LeftGuns)
+	_shoot_guns("ShootRight", $RightGuns)
+
+func _shoot_guns(action: String, gun_container: Node2D):
+	if Input.is_action_pressed(action):
+		var just_pressed = Input.is_action_just_pressed(action)
+		var mouse_pos = get_global_mouse_position()
+		for gun in gun_container.get_children():
+			gun.fire(just_pressed, mouse_pos, spawn_projectile)
 
 func hit(damage):
 	PlayerData.health -= damage
