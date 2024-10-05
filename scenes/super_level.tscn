@@ -21,3 +21,4 @@ tile_set = ExtResource("2_i12ur")
 position = Vector2(510, 300)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+position_smoothing_enabled = true
