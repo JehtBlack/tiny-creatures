@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://dqoxhn6h3ht8f"]
+[gd_scene load_steps=4 format=4 uid="uid://dqoxhn6h3ht8f"]
 
 [ext_resource type="Script" path="res://scenes/super_level.gd" id="1_bg3g2"]
 [ext_resource type="PackedScene" uid="uid://2k4goowntk4a" path="res://scenes/player.tscn" id="2_hje26"]
 [ext_resource type="TileSet" uid="uid://b3hcgxb56uflb" path="res://scenes/cave.tres" id="2_i12ur"]
-[ext_resource type="PackedScene" uid="uid://ciubqusvuudhf" path="res://scenes/bullet.tscn" id="4_msce6"]
 
 [node name="SuperLevel" type="Node2D"]
 script = ExtResource("1_bg3g2")
@@ -22,7 +21,6 @@ tile_set = ExtResource("2_i12ur")
 
 [node name="Player" parent="." instance=ExtResource("2_hje26")]
 position = Vector2(510, 300)
-bullet = ExtResource("4_msce6")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position_smoothing_enabled = true

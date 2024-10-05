@@ -3,7 +3,6 @@ extends CharacterBody2D
 signal spawn_projectile(projectile: PackedScene, spawn_position: Vector2, direction: Vector2, speed: float)
 
 @export var speed = 400
-@export var bullet: PackedScene
 
 var look = true
 
@@ -28,9 +27,7 @@ func _on_control_mouse_exited():
 
 
 func shoot():
-	if Input.is_action_just_pressed("ShootLeft"):
-		var direction = Vector2.RIGHT.rotated($MuzzleLeft.global_rotation).normalized()
-		spawn_projectile.emit(bullet, $MuzzleLeft.global_position, direction, 500)
-	if Input.is_action_just_pressed("ShootRight"):
-		var direction = Vector2.RIGHT.rotated($MuzzleRight.global_rotation).normalized()
-		spawn_projectile.emit(bullet, $MuzzleRight.global_position, direction, 500)
+	if Input.is_action_pressed("ShootLeft"):
+		$GunLeft.fire(Input.is_action_just_pressed("ShootLeft"), get_global_mouse_position(), spawn_projectile)
+	if Input.is_action_pressed("ShootRight"):
+		$GunRight.fire(Input.is_action_just_pressed("ShootRight"), get_global_mouse_position(), spawn_projectile)
