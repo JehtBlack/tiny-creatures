@@ -13,3 +13,11 @@ config_version=5
 config/name="Tiny Creatures"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[layer_names]
+
+2d_physics/layer_1="Player"
+2d_physics/layer_2="Enemies"
+2d_physics/layer_3="Pickups"
+2d_physics/layer_4="Objects"
+2d_physics/layer_5="Sensors"

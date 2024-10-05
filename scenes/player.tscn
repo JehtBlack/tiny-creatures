@@ -1,19 +1,18 @@
 [gd_scene load_steps=4 format=3 uid="uid://2k4goowntk4a"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_y1rou"]
-[ext_resource type="Texture2D" uid="uid://muvypbvog43" path="res://icon.svg" id="2_f4pqw"]
+[ext_resource type="Texture2D" uid="uid://cup464pvt0n6h" path="res://assets/sprites/player-proto.png" id="2_qfk1d"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gahfh"]
-radius = 19.0
-height = 68.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_ldg6g"]
+radius = 32.0156
 
 [node name="Player" type="CharacterBody2D"]
+collision_mask = 30
 script = ExtResource("1_y1rou")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, 2.5)
-scale = Vector2(0.25, 0.382813)
-texture = ExtResource("2_f4pqw")
+position = Vector2(0, -13)
+texture = ExtResource("2_qfk1d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_gahfh")
+shape = SubResource("CircleShape2D_ldg6g")
