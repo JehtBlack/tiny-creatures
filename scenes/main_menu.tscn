@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmbgdd82l6y41"]
+
+[ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_lx45e"]
+[ext_resource type="PackedScene" uid="uid://dqoxhn6h3ht8f" path="res://scenes/super_level.tscn" id="2_dmna1"]
+
+[node name="MainMenu" type="CanvasLayer"]
+script = ExtResource("1_lx45e")
+level_to_start = ExtResource("2_dmna1")
+
+[node name="Menu" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Container" type="AspectRatioContainer" parent="Menu"]
+layout_mode = 2
+
+[node name="Logo" type="TextureRect" parent="Menu/Container"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Menu/Container"]
+layout_mode = 2
+text = "Placeholder Text"
+
+[node name="Buttons" type="VBoxContainer" parent="Menu"]
+layout_mode = 2
+
+[node name="Play" type="Button" parent="Menu/Buttons"]
+layout_mode = 2
+text = "Play"
+
+[node name="Options" type="Button" parent="Menu/Buttons"]
+layout_mode = 2
+text = "Options"
+
+[node name="Exit" type="Button" parent="Menu/Buttons"]
+layout_mode = 2
+text = "Exit"
+
+[connection signal="pressed" from="Menu/Buttons/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Menu/Buttons/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Menu/Buttons/Exit" to="." method="_on_exit_pressed"]

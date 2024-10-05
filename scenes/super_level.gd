@@ -8,7 +8,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	pass
+	
+	if Input.is_key_pressed(KEY_ESCAPE):
+		var end_screen = preload("res://scenes/end_screen.tscn").instantiate()
+		add_child(end_screen)
 
 func spawn_projectile(projectile: PackedScene, spawn_position: Vector2, direction: Vector2, speed: float) -> void:
 	var projectile_instance = projectile.instantiate() as Projectile

@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://bduan6cxc2f8f"]
+
+[ext_resource type="Script" path="res://end_screen.gd" id="1_ltgdy"]
+
+[node name="EndScreen" type="CanvasLayer"]
+script = ExtResource("1_ltgdy")
+
+[node name="GameOver" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -41.5
+offset_top = -23.5
+offset_right = 41.5
+offset_bottom = 23.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="GameOver"]
+layout_mode = 2
+text = "GameOver
+"
+
+[node name="Retry" type="Button" parent="GameOver"]
+layout_mode = 2
+text = "Retry"
+
+[node name="Exit" type="Button" parent="GameOver"]
+layout_mode = 2
+text = "Exit"
+
+[connection signal="pressed" from="GameOver/Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="GameOver/Exit" to="." method="_on_exit_pressed"]
