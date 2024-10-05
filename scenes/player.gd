@@ -8,7 +8,7 @@ var look = true
 func get_input():
 	if look == true:
 		look_at(get_global_mouse_position())
-	var input_direction = Input.get_vector("Left", "Right", "Forwards", "Backwards")
+	var input_direction = Input.get_vector("Left", "Right", "Forward", "Backward")
 	velocity = input_direction * speed
 		
 func _physics_process(delta):
