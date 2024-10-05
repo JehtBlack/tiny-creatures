@@ -20,5 +20,8 @@ texture = ExtResource("2_qfk1d")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ldg6g")
 
-[node name="Muzzle" type="Marker2D" parent="."]
-position = Vector2(17, -42)
+[node name="MuzzleLeft" type="Marker2D" parent="."]
+position = Vector2(30, -33)
+
+[node name="MuzzleRight" type="Marker2D" parent="."]
+position = Vector2(30, 36)
