@@ -3,6 +3,6 @@ extends Projectile
 
 func hit(body: Node2D) -> void:
 	if body.is_in_group("damageable"):
-		body.hit(5)
+		body.hit(self.damage)
 
 	queue_free()
