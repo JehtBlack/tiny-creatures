@@ -15,6 +15,6 @@ func _ready() -> void:
 func fire(_fire_just_pressed: bool, _target: Vector2, spawn_signal: Signal) -> void:
 	if fire_timer.is_stopped():
 		var spawn_marker: Node2D = ($ProjectileSpawnMarkers.get_child(randi() % $ProjectileSpawnMarkers.get_child_count()) if $ProjectileSpawnMarkers.get_child_count() > 0 else $ProjectileSpawnMarkers)
-		var direction = Vector2.RIGHT.rotated(spawn_marker.global_rotation).normalized()
+		var direction = (_target - spawn_marker.global_position).normalized()
 		spawn_signal.emit(bullet, spawn_marker.global_position, direction, bullet_exit_speed)
 		fire_timer.start()

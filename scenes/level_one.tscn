@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://dv2fel12id8xt" path="res://scenes/glocklin.tscn" id="2_cxsga"]
 [ext_resource type="PackedScene" uid="uid://b3vsikp73trth" path="res://scenes/shooty_enemy.tscn" id="3_4s66y"]
 [ext_resource type="PackedScene" uid="uid://nkvpadg1tdl8" path="res://scenes/basic_enemy.tscn" id="3_xasfe"]
-[ext_resource type="PackedScene" path="res://scenes/health_pickup.tscn" id="5_f766t"]
-[ext_resource type="PackedScene" path="res://scenes/SpawnPoint.tscn" id="6_6r8ov"]
+[ext_resource type="PackedScene" uid="uid://c4kcqa544jb0t" path="res://scenes/health_pickup.tscn" id="5_f766t"]
+[ext_resource type="PackedScene" uid="uid://5l1nm3cwh35v" path="res://scenes/SpawnPoint.tscn" id="6_6r8ov"]
 
 [node name="LevelOne" instance=ExtResource("1_8cjel")]
 enemy_array = Array[PackedScene]([ExtResource("3_xasfe"), ExtResource("3_4s66y")])
