@@ -77,3 +77,5 @@ func _on_spawn_enemy(spawn_position: Vector2) -> void:
 		enemy.enemy_died.connect(_spawn_pickup)
 		if "pick_new_target" in enemy:
 			enemy.pick_new_target()
+		if "spawn_projectile" in enemy:
+			enemy.spawn_projectile.connect(_on_player_spawn_projectile)

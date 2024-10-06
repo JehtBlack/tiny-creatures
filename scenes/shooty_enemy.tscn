@@ -1,8 +1,34 @@
-[gd_scene load_steps=3 format=3 uid="uid://b3vsikp73trth"]
+[gd_scene load_steps=4 format=3 uid="uid://b3vsikp73trth"]
 
 [ext_resource type="PackedScene" uid="uid://nkvpadg1tdl8" path="res://scenes/basic_enemy.tscn" id="1_jt40r"]
 [ext_resource type="Script" path="res://scenes/shooty_enemy.gd" id="2_24fg5"]
+[ext_resource type="PackedScene" uid="uid://ciubqusvuudhf" path="res://scenes/bullet.tscn" id="3_wnjal"]
 
 [node name="ShootyEnemy" instance=ExtResource("1_jt40r")]
 script = ExtResource("2_24fg5")
 preferred_range = 150.0
+fire_rate = 5.0
+bullet = ExtResource("3_wnjal")
+
+[node name="Label" type="Label" parent="Sprite2D" index="0"]
+modulate = Color(1, 0, 0, 1)
+offset_left = -52.0
+offset_top = 20.0
+offset_right = 58.0
+offset_bottom = 43.0
+text = "I've Got A Gun"
+horizontal_alignment = 1
+
+[node name="CollisionShape2D" parent="." index="1"]
+visible = false
+
+[node name="DetectArea" parent="." index="2"]
+visible = false
+
+[node name="ProjectileSpawnMarkers" type="Node2D" parent="." index="4"]
+
+[node name="Marker2D" type="Marker2D" parent="ProjectileSpawnMarkers" index="0"]
+position = Vector2(-9, -13)
+
+[node name="Marker2D2" type="Marker2D" parent="ProjectileSpawnMarkers" index="1"]
+position = Vector2(9, -13)
