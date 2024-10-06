@@ -43,7 +43,9 @@ func _pre_move() -> void:
 	pass
 
 func _move(_delta: float) -> void:
-	assert(false, "Generic enemy move, pick an implemented enemy type")
+	velocity = direction * run_speed
+	move_and_slide()
+	#assert(false, "Generic enemy move, pick an implemented enemy type")
 
 func _physics_process(delta):
 	_pre_move()
