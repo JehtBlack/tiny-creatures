@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dv2fel12id8xt" path="res://scenes/glocklin.tscn" id="2_cxsga"]
 [ext_resource type="PackedScene" uid="uid://c4kcqa544jb0t" path="res://scenes/health_pickup.tscn" id="3_wysns"]
 [ext_resource type="PackedScene" uid="uid://5l1nm3cwh35v" path="res://scenes/SpawnPoint.tscn" id="4_c3del"]
+[ext_resource type="PackedScene" uid="uid://b3vsikp73trth" path="res://scenes/shooty_enemy.tscn" id="3_4s66y"]
 
 [node name="LevelOne" instance=ExtResource("1_8cjel")]
 glocklin = ExtResource("2_cxsga")
@@ -52,3 +53,5 @@ position = Vector2(641, -299)
 
 [node name="SpawnPoint7" parent="SpawnPoints" index="6" instance=ExtResource("4_c3del")]
 position = Vector2(-239, 1497)
+[node name="ShootyEnemy" parent="Enemies" index="0" instance=ExtResource("3_4s66y")]
+position = Vector2(93, 576)

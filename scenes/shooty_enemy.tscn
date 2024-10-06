@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3vsikp73trth"]
+
+[ext_resource type="PackedScene" uid="uid://nkvpadg1tdl8" path="res://scenes/basic_enemy.tscn" id="1_jt40r"]
+[ext_resource type="Script" path="res://scenes/shooty_enemy.gd" id="2_24fg5"]
+
+[node name="ShootyEnemy" instance=ExtResource("1_jt40r")]
+script = ExtResource("2_24fg5")
+preferred_range = 150.0
