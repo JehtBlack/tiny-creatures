@@ -88,3 +88,6 @@ ShootRight={
 2d_physics/layer_4="Objects"
 2d_physics/layer_5="Sensors"
 2d_physics/layer_6="Projectiles"
+avoidance/layer_1="Player"
+avoidance/layer_2="Enemies"
+avoidance/layer_3="Glocklins"

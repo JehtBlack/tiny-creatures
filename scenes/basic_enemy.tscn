@@ -7,7 +7,7 @@
 radius = 46.2709
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kfdrs"]
-radius = 228.009
+radius = 121.004
 
 [node name="BasicEnemy" type="CharacterBody2D" groups=["damageable"]]
 collision_layer = 2
@@ -27,6 +27,13 @@ collision_layer = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectArea"]
 shape = SubResource("CircleShape2D_kfdrs")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+avoidance_layers = 2
+avoidance_mask = 0
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="."]
+avoidance_layers = 2
 
 [connection signal="body_entered" from="DetectArea" to="." method="_on_detect_area_body_entered"]
 [connection signal="body_exited" from="DetectArea" to="." method="_on_detect_area_body_exited"]

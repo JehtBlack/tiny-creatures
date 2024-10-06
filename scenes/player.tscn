@@ -48,3 +48,6 @@ fire_rate = 50.0
 [node name="GunRight2" parent="RightGuns" instance=ExtResource("3_bdogp")]
 position = Vector2(1, 19)
 fire_rate = 50.0
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="."]
+radius = 200.0
