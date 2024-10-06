@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c4kcqa544jb0t"]
 
 [ext_resource type="Script" path="res://scenes/health_pickup.gd" id="1_2tuv5"]
-[ext_resource type="Texture2D" uid="uid://j34bnddad3ov" path="res://assets/sprites/png-transparent-pixel-art-heart-8-bit-color-heart-text-rectangle-sticker-thumbnail.png" id="2_cb162"]
+[ext_resource type="Texture2D" uid="uid://hqwcl6gmd2pj" path="res://assets/sprites/heart pixel art 32x32.png" id="2_lmhx1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lbf1s"]
 radius = 152.398
@@ -10,8 +10,8 @@ radius = 152.398
 script = ExtResource("1_2tuv5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_cb162")
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_lmhx1")
 
 [node name="Area2D" type="Area2D" parent="."]
 

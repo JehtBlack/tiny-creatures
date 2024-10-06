@@ -8,7 +8,7 @@
 
 [node name="SuperLevel" type="Node2D"]
 script = ExtResource("1_bg3g2")
-enemy_array = [ExtResource("2_oelpk")]
+enemy_array = Array[PackedScene]([ExtResource("2_oelpk")])
 
 [node name="HUD" parent="." instance=ExtResource("2_fhvde")]
 
