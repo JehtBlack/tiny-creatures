@@ -52,6 +52,8 @@ func _spawn_pickup(spawn_position: Vector2) -> void:
 			var glocklin_instance = glocklin.instantiate() as Glocklin
 			$Glocklins.add_child(glocklin_instance)
 			glocklin_instance.global_position = spawn_position
+			if "pick_new_target" in glocklin_instance:
+				glocklin_instance.pick_new_target()
 			print("Glocklin dropped")
 		
 		if toDrop == "health":
