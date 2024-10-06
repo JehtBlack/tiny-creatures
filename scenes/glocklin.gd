@@ -27,10 +27,6 @@ func wander():
 			velocity = direction * (run_speed / 2.0)
 			look_at(direction)
 
-	
-
-
-
 func _physics_process(_delta):
 	if player != null:
 		var direction = position.direction_to(player.position)
@@ -41,18 +37,19 @@ func _physics_process(_delta):
 	move_and_slide()
 
 
-
-
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	player = body
-	print("Glocklin being chased")
+	if body.is_in_group("player"):
+		player = body
+		print("Glocklin being chased")
 
 
-func _on_area_2d_body_exited(_body: Node2D) -> void:
-	player = null
-	print("You picked the wrong house fool!")
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		player = null
+		print("You picked the wrong house fool!")
 
 
 func _on_area_pickup_body_entered(body: Node2D) -> void:
-	body._add_gun(gun)
-	queue_free()
+	if body.is_in_group("player"):
+		body._add_gun(gun)
+		queue_free()

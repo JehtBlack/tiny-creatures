@@ -32,6 +32,7 @@ project/assembly_name="Tiny Creatures"
 [global_group]
 
 damageable="All Items/units which can take damage"
+player="The player"
 
 [input]
 
@@ -81,6 +82,7 @@ ShootRight={
 [layer_names]
 
 2d_physics/layer_1="Player"
+2d_navigation/layer_1="Floo"
 2d_physics/layer_2="Enemies"
 2d_physics/layer_3="Pickups"
 2d_physics/layer_4="Objects"

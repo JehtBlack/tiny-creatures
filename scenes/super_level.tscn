@@ -31,6 +31,7 @@ position = Vector2(510, 300)
 position_smoothing_enabled = true
 
 [node name="BasicEnemy" parent="." instance=ExtResource("4_l1xq3")]
+position = Vector2(60, 107)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("6_7cgny")]
 position = Vector2(1146, 130)
