@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal enemy_died
+
 var run_speed = 50
 var health = 10
 var player = null
@@ -60,7 +62,7 @@ func _on_detect_area_body_exited(body: Node2D) -> void:
 func hit(damage):
 	health = health - damage
 	if health <= 0:
-		Drop.dropItem()
+		enemy_died.emit(global_position)
 		queue_free()
 
 func _track_player():
