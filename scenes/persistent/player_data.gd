@@ -4,6 +4,8 @@ signal max_health_changed(new_max_health: int)
 signal health_changed(new_health: int)
 signal health_depleted
 
+@export var spawn_count = 0
+
 @export var max_health: int = 30:
 	set(value):
 		max_health = max(value, 1)

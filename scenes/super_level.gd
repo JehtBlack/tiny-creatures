@@ -1,6 +1,8 @@
 extends Node2D
 class_name SuperLevel
 
+@export var enemy_array: Array[PackedScene]
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	PlayerData.health_depleted.connect(_on_player_health_depleted)
@@ -8,6 +10,10 @@ func _ready() -> void:
 	for enemy in $Enemies.get_children():
 		if "enemy_died" in enemy:
 			enemy.enemy_died.connect(_spawn_pickup)
+		
+	for spawn_point in $SpawnPoints.get_children():
+		if "spawn_enemy" in spawn_point:
+			spawn_point.spawn_enemy.connect(_on_spawn_enemy)
 
 func spawn_projectile(projectile: PackedScene, spawn_position: Vector2, direction: Vector2, speed: float) -> void:
 	var projectile_instance = projectile.instantiate() as Projectile
@@ -28,7 +34,7 @@ func _on_player_health_depleted() -> void:
 
 func _spawn_pickup(spawn_position: Vector2) -> void:
 	var toDrop = "health"
-	var success = 10
+	var success = 1
 
 	var item:String
 	if randi() % 2:
@@ -61,4 +67,11 @@ func _spawn_pickup(spawn_position: Vector2) -> void:
 		print("no luck")
 		success += 1
 
-	
+func _on_spawn_enemy(spawn_position: Vector2) -> void:
+	print("spawn an enemy at ", spawn_position)
+
+	if $Enemies.get_child_count() <= 30:
+		var enemy = enemy_array.pick_random().instantiate()
+		$Enemies.add_child(enemy)
+		enemy.global_position = spawn_position
+		enemy.enemy_died.connect(_spawn_pickup)
