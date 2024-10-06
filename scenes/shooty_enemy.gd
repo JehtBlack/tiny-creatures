@@ -50,7 +50,7 @@ func _pre_move() -> void:
 		
 
 func _move(_delta: float) -> void:
-	velocity = direction * run_speed if not hold_position else Vector2.ZERO
+	$NavigationAgent2D.velocity = direction * run_speed if not hold_position else Vector2.ZERO
 
 	if player != null:
 		rotation = (player.global_position - global_position).angle() + (PI / 2)
@@ -79,3 +79,9 @@ func _on_target_reached() -> void:
 
 func _on_player_lost() -> void:
 	hold_position = false
+
+func _set_rotation(safe_direction: Vector2) -> void:
+	if player == null:
+		rotation = safe_direction.angle() + (PI / 2)
+	else:
+		rotation = (player.global_position - global_position).angle() + (PI / 2)

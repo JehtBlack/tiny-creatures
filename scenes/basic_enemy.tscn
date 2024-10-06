@@ -33,13 +33,13 @@ metadata/_edit_group_ = true
 shape = SubResource("CircleShape2D_kfdrs")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_postprocessing = 1
+avoidance_enabled = true
+radius = 30.0
 avoidance_layers = 2
-avoidance_mask = 0
-debug_enabled = true
-
-[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="."]
-avoidance_layers = 2
+avoidance_mask = 2
 
 [connection signal="body_entered" from="DetectArea" to="." method="_on_detect_area_body_entered"]
 [connection signal="body_exited" from="DetectArea" to="." method="_on_detect_area_body_exited"]
 [connection signal="target_reached" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_target_reached"]
+[connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_velocity_computed"]

@@ -18,6 +18,7 @@ script = ExtResource("1_17nfb")
 gun = ExtResource("2_xwy65")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_postprocessing = 1
 avoidance_enabled = true
 avoidance_layers = 4
 avoidance_mask = 3

@@ -43,14 +43,13 @@ func _pre_move() -> void:
 	pass
 
 func _move(_delta: float) -> void:
-	velocity = direction * run_speed
+	$NavigationAgent2D.velocity = direction * run_speed
 	move_and_slide()
 	#assert(false, "Generic enemy move, pick an implemented enemy type")
 
 func _physics_process(delta):
 	_pre_move()
 	direction = ($NavigationAgent2D.get_next_path_position() - global_position).normalized()
-	rotation = direction.angle() + (PI / 2)
 	_move(delta)
 
 func _on_detect_area_body_entered(body: Node2D) -> void:
@@ -98,3 +97,10 @@ func _on_player_detected() -> void:
 
 func _on_player_lost() -> void:
 	pass
+
+func _set_rotation(safe_direction: Vector2) -> void:
+	rotation = safe_direction.angle() + (PI / 2)
+
+func _on_navigation_agent_2d_velocity_computed(safe_velocity: Vector2) -> void:
+	velocity = safe_velocity
+	_set_rotation(velocity)

@@ -30,13 +30,13 @@ func _on_player_health_depleted() -> void:
 	add_child(end_screen)
 
 @export var glocklin: PackedScene
-@export var health_pickup : PackedScene
+@export var health_pickup: PackedScene
 
 func _spawn_pickup(spawn_position: Vector2) -> void:
 	var toDrop = "health"
 	var success = 1
 
-	var item:String
+	var item: String
 	if randi() % 2:
 		item = "glocklin"
 	else: item = "health"
@@ -75,3 +75,5 @@ func _on_spawn_enemy(spawn_position: Vector2) -> void:
 		$Enemies.add_child(enemy)
 		enemy.global_position = spawn_position
 		enemy.enemy_died.connect(_spawn_pickup)
+		if "pick_new_target" in enemy:
+			enemy.pick_new_target()
