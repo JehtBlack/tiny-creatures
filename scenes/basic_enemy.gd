@@ -60,6 +60,7 @@ func _on_detect_area_body_exited(body: Node2D) -> void:
 func hit(damage):
 	health = health - damage
 	if health <= 0:
+		Drop.dropItem()
 		queue_free()
 
 func _track_player():
