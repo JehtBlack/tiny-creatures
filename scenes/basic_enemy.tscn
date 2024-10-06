@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://nkvpadg1tdl8"]
 
 [ext_resource type="Script" path="res://scenes/basic_enemy.gd" id="1_4fv0q"]
-[ext_resource type="Texture2D" uid="uid://qcid6f4rtnon" path="res://assets/sprites/png-clipart-round-red-illustration-red-circle-miscellaneous-shapes-thumbnail.png" id="1_s4enr"]
+[ext_resource type="Texture2D" uid="uid://b5ejkvc5cfdyj" path="res://assets/sprites/enemy-proto.png" id="2_rbho1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d8kqw"]
-radius = 46.2709
+radius = 8.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kfdrs"]
-radius = 121.004
+radius = 100.0
 
 [node name="BasicEnemy" type="CharacterBody2D" groups=["damageable"]]
 collision_layer = 2
@@ -15,15 +15,19 @@ collision_mask = 43
 script = ExtResource("1_4fv0q")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -3)
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_s4enr")
+texture = ExtResource("2_rbho1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_d8kqw")
+metadata/_edit_lock_ = true
 
 [node name="DetectArea" type="Area2D" parent="."]
 scale = Vector2(2, 2)
 collision_layer = 16
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectArea"]
 shape = SubResource("CircleShape2D_kfdrs")
@@ -31,9 +35,11 @@ shape = SubResource("CircleShape2D_kfdrs")
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 avoidance_layers = 2
 avoidance_mask = 0
+debug_enabled = true
 
 [node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="."]
 avoidance_layers = 2
 
 [connection signal="body_entered" from="DetectArea" to="." method="_on_detect_area_body_entered"]
 [connection signal="body_exited" from="DetectArea" to="." method="_on_detect_area_body_exited"]
+[connection signal="target_reached" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_target_reached"]
