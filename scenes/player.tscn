@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://2k4goowntk4a"]
+[gd_scene load_steps=4 format=3 uid="uid://2k4goowntk4a"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_y1rou"]
 [ext_resource type="Texture2D" uid="uid://cup464pvt0n6h" path="res://assets/sprites/player-proto.png" id="2_qfk1d"]
-[ext_resource type="PackedScene" uid="uid://e5ts482qt8xw" path="res://scenes/gun.tscn" id="3_bdogp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ldg6g"]
 radius = 32.0156
@@ -20,34 +19,10 @@ texture = ExtResource("2_qfk1d")
 shape = SubResource("CircleShape2D_ldg6g")
 
 [node name="LeftGuns" type="Node2D" parent="."]
-position = Vector2(0, -34)
-
-[node name="GunLeft" parent="LeftGuns" instance=ExtResource("3_bdogp")]
-position = Vector2(31, -1)
-fire_rate = 5.0
-
-[node name="GunLeft2" parent="LeftGuns" instance=ExtResource("3_bdogp")]
-position = Vector2(46, 16)
-fire_rate = 5.0
-
-[node name="GunLeft3" parent="LeftGuns" instance=ExtResource("3_bdogp")]
-position = Vector2(42, -16)
-fire_rate = 5.0
-
-[node name="GunLeft4" parent="LeftGuns" instance=ExtResource("3_bdogp")]
-position = Vector2(10, -22)
-fire_rate = 5.0
+position = Vector2(0, -39)
 
 [node name="RightGuns" type="Node2D" parent="."]
-position = Vector2(0, 35)
-
-[node name="GunRight" parent="RightGuns" instance=ExtResource("3_bdogp")]
-position = Vector2(32, 2)
-fire_rate = 50.0
-
-[node name="GunRight2" parent="RightGuns" instance=ExtResource("3_bdogp")]
-position = Vector2(1, 19)
-fire_rate = 50.0
+position = Vector2(0, 41)
 
 [node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="."]
 radius = 200.0

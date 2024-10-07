@@ -6,6 +6,7 @@
 [node name="Gun" type="Node2D"]
 script = ExtResource("1_vo6wq")
 bullet = ExtResource("2_utg78")
+fire_rate = 6.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 

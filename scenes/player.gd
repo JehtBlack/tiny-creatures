@@ -38,16 +38,20 @@ func _add_gun(gun: PackedScene):
 	var left_gun_count = $LeftGuns.get_child_count()
 	var right_gun_count = $RightGuns.get_child_count()
 	if left_gun_count < right_gun_count:
-		_add_gun_to_container(gun, $LeftGuns)
+		_add_gun_to_container(gun, $LeftGuns, true)
 	elif left_gun_count > right_gun_count:
-		_add_gun_to_container(gun, $RightGuns)
+		_add_gun_to_container(gun, $RightGuns, false)
 	else:
-		_add_gun_to_container(gun, $LeftGuns if randi() % 2 == 0 else $RightGuns)
+		var choice = randi() % 2
+		_add_gun_to_container(gun, $LeftGuns if choice == 0 else $RightGuns, choice == 0)
 
-func _add_gun_to_container(gun: PackedScene, container: Node2D):
+func _add_gun_to_container(gun: PackedScene, container: Node2D, negative_pos_growth: bool):
 	var new_gun = gun.instantiate() as Node2D
-	new_gun.transform = container.transform
 	container.add_child(new_gun)
+	new_gun.transform = container.transform
+	var growth_direction: float = -1.0 if negative_pos_growth else 1.0
+	new_gun.position = Vector2.ZERO + (container.get_child_count() * Vector2(0, growth_direction * 20))
+	# new_gun.global_position = container.global_position
 
 func shoot():
 	_shoot_guns("ShootLeft", $LeftGuns)

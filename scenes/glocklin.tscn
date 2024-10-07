@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/glocklin.gd" id="1_17nfb"]
 [ext_resource type="PackedScene" uid="uid://e5ts482qt8xw" path="res://scenes/gun.tscn" id="2_xwy65"]
-[ext_resource type="Texture2D" uid="uid://gvjg6morfnnp" path="res://assets/sprites/glocklin-proto.png" id="3_tsyh6"]
+[ext_resource type="Texture2D" uid="uid://drovgye42nx34" path="res://assets/sprites/glocklin-8-way-proto.png" id="3_k3qn8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4olo4"]
 radius = 42.0476
@@ -25,7 +25,8 @@ avoidance_mask = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(2, 2)
-texture = ExtResource("3_tsyh6")
+texture = ExtResource("3_k3qn8")
+hframes = 8
 
 [node name="AreaPickup" type="Area2D" parent="."]
 collision_layer = 16
@@ -37,6 +38,10 @@ shape = SubResource("CircleShape2D_4olo4")
 [node name="CollisionShape2DChar" type="CollisionShape2D" parent="."]
 visible = false
 shape = SubResource("CapsuleShape2D_su70n")
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(0, 0, 41, 0)
+width = 1.0
 
 [connection signal="target_reached" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_target_reached"]
 [connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_velocity_computed"]

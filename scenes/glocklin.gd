@@ -22,12 +22,18 @@ func pick_new_target():
 	var target_point = NavigationServer2D.map_get_random_point($NavigationAgent2D.get_navigation_map(), 1, false)
 	$NavigationAgent2D.target_position = target_point
 
+func rotate_sprite():
+	var angle = velocity.angle()
+	var frame_index = abs(int(((angle / (2 * PI))) * 8) + 4)
+	$Line2D.rotation = angle
+	$Sprite2D.frame = frame_index
+
 func _physics_process(_delta):
 	var next_path_pos: Vector2 = $NavigationAgent2D.get_next_path_position()
 	var direction: Vector2 = (next_path_pos - global_position).normalized()
 	$NavigationAgent2D.velocity = direction * run_speed
 	move_and_slide()
-
+	rotate_sprite()
 
 func _on_area_pickup_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
@@ -37,7 +43,7 @@ func _on_area_pickup_body_entered(body: Node2D) -> void:
 
 func _on_navigation_agent_2d_velocity_computed(safe_velocity: Vector2) -> void:
 	velocity = safe_velocity
-	rotation = velocity.angle()
+	# rotation = velocity.angle()
 
 
 func _on_navigation_agent_2d_target_reached() -> void:
