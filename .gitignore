@@ -3,3 +3,4 @@
 /android/
 /generated/
 *.tmp
+/build/

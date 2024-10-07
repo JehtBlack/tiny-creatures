@@ -39,10 +39,6 @@ shape = SubResource("CircleShape2D_4olo4")
 visible = false
 shape = SubResource("CapsuleShape2D_su70n")
 
-[node name="Line2D" type="Line2D" parent="."]
-points = PackedVector2Array(0, 0, 41, 0)
-width = 1.0
-
 [connection signal="target_reached" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_target_reached"]
 [connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_velocity_computed"]
 [connection signal="body_entered" from="AreaPickup" to="." method="_on_area_pickup_body_entered"]
